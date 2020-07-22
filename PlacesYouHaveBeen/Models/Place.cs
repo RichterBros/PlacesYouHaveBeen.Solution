@@ -15,6 +15,11 @@ namespace PlacesYouHaveBeen.Models
       return _places[searchId - 1];
     }
 
+    public static void Delete(int searchId)
+    {
+      _places.RemoveAt(searchId - 1);
+    }
+
     public Place(string name, int days, string description)
     {
       PlaceName = name;
