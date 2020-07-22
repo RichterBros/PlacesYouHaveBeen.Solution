@@ -9,7 +9,12 @@
 <ul>
   @foreach (Place place in Model)
   {
-    <li><a href ='/places/@place.Id'>@place.PlaceName</a></li>
+    <li>
+      <a href ="/places/@place.Id">@place.PlaceName</a><br>
+      <form action="/places/@place.Id" method="post">
+        <button type="submit" name="button">Delete</button>
+      </form>
+    </li>
   }
 </ul>
 
