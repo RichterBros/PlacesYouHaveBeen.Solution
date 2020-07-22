@@ -17,7 +17,7 @@ namespace PlacesYouHaveBeen.Tests
     [TestMethod]
     public void PlaceConstructor_CreatesInstanceOfPlace_Place()
     {
-      Place newPlace = new Place("Portland");
+      Place newPlace = new Place("Portland", 3, "A lot of bridges");
       Assert.AreEqual(typeof(Place), newPlace.GetType());
     }
 
@@ -25,7 +25,7 @@ namespace PlacesYouHaveBeen.Tests
     public void GetPlace_ReturnsPlaceName_String()
     {
       string cityName = "Portland";
-      Place place = new Place(cityName);
+      Place place = new Place(cityName, 3, "A lot of bridges");
       string result = place.PlaceName;
       Assert.AreEqual(cityName, result);
     }
@@ -34,7 +34,7 @@ namespace PlacesYouHaveBeen.Tests
     public void SetPlace_SetPlaceName_String()
     {
       string cityName = "Portland";
-      Place place = new Place(cityName);
+      Place place = new Place(cityName,  3, "A lot of bridges");
 
       string newCityName = "Seattle";
       place.PlaceName = newCityName;
@@ -56,13 +56,35 @@ namespace PlacesYouHaveBeen.Tests
     {
       string cityName1 = "Portland";
       string cityName2 = "Seattle";
-      Place place1 = new Place(cityName1);
-      Place place2 = new Place(cityName2);
+      Place place1 = new Place(cityName1,  3, "A lot of bridges");
+      Place place2 = new Place(cityName2, 3, "A lot of rain");
       List<Place> newList = new List<Place> { place1, place2 };
 
       List<Place> result = Place.GetAll();
 
       CollectionAssert.AreEqual(newList, result);
+    }
+
+    [TestMethod]
+    public void GetId_PlacesInstantiateWithAnIdAndGetterReturns_Int()
+    {
+      Place place = new Place("Seattle", 3, "A lot of rain");
+      int result = place.Id;
+
+      Assert.AreEqual(1, result);
+    }  
+
+    [TestMethod]
+    public void Find_ReturnsCorrectPlace_Place()
+    {
+      string cityName1 = "Portland";
+      string cityName2 = "Seattle";
+      Place place1 = new Place(cityName1,  3, "A lot of bridges");
+      Place place2 = new Place(cityName2, 3, "A lot of rain");
+
+      Place result = Place.Find(2);
+
+      Assert.AreEqual(place2, result);
     }
 
   }
