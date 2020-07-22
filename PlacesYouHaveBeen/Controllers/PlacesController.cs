@@ -33,5 +33,13 @@ namespace PlacesYouHaveBeen.Controllers
       Place foundPlace = Place.Find(id);
       return View(foundPlace);
     } 
+  
+
+    [HttpPost("/places/delete")]
+    public ActionResult DeleteAll()
+    {
+      Place.ClearAll();
+      return View();
+    }
   }
 }
