@@ -1,5 +1,9 @@
 <form action="/places" method="post">
-  <label for="placeNmae">Add the city name you have been</label>
+  <label for="placeNmae">Add the city or place name you have been</label>
   <input id="placeName" name="placeName" type="text">
+  <label for="days">Add number of days</label>
+  <input id="days" name="days" type="number" min="1">
+  <label for="description">Add description of your journey</label>
+  <textarea id="description" name="description" rows="4" cols="50"></textarea>
   <button type="submit">Submit</button>
 </form>

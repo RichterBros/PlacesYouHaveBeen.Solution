@@ -7,7 +7,7 @@ namespace PlacesYouHaveBeen.Models
     public string PlaceName {get; set;}
     public int NumberOfDays {get; set;}
     public string Description {get; set;}
-    public int Id{get;}
+    public int Id {get;}
     private static List<Place> _places = new List<Place>();
 
     public static Place Find(int searchId)
