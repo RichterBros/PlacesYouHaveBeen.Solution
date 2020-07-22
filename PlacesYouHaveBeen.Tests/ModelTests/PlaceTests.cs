@@ -8,9 +8,10 @@ namespace PlacesYouHaveBeen.Tests
   public class PlaceTests
   {
     [TestMethod]
-    public void IsLeapYear_NumberDivisibleByFour_True()
+    public void PlaceConstructor_CreatesInstanceOfPlace_Place()
     {
-      //testing code will go here
+      Place newPlace = new Place();
+      Assert.AreEqual(typeof(Place), newPlace.GetType());
     }
   }
 }

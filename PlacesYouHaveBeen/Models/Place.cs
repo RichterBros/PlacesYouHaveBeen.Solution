@@ -1,7 +1,7 @@
 namespace PlacesYouHaveBeen.Models
 {
-  public class Places
+  public class Place
   {
-    
+
   }
 }
