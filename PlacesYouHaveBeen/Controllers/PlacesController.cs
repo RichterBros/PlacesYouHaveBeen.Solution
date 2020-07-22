@@ -20,10 +20,18 @@ namespace PlacesYouHaveBeen.Controllers
     }
 
     [HttpPost("/places")]
-    public ActionResult Create(string placeName)
+    public ActionResult Create(string placeName, string days, string description)
     {
-      Place newPlace = new Place(placeName);
+      int daysOfTrip = int.Parse(days);
+      Place newPlace = new Place(placeName, daysOfTrip, description);
       return RedirectToAction("Index");
     }
+
+    [HttpGet("/places/{id}")]
+    public ActionResult Show(int id)
+    {
+      Place foundPlace = Place.Find(id);
+      return View(foundPlace);
+    } 
   }
 }
