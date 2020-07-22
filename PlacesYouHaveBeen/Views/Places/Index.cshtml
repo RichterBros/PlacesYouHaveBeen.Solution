@@ -1,0 +1,16 @@
+@using PlacesYouHaveBeen.Models;
+
+<h1>Journal Entries</h1>
+
+@if (Model.Count == 0)
+{
+  <p>There are no entries in the journal.</p>
+}
+<ul>
+  @foreach (Place place in Model)
+  {
+    <li>@place.PlaceName</li>
+  }
+</ul>
+
+<a href="/places/new">Add a new entry.</a>
